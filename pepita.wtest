@@ -20,4 +20,12 @@ describe "name" {
         pepita.comer(alpiste)
         assert.notThat(pepita.cansada())
     }
+
+    test "Pepón" {
+        assert.that(pepon.cansada())
+        pepon.comer(alpiste)
+        assert.equals(40, pepon.energia())
+        pepon.volar(3)
+        assert.equals(4, pepon.energia())
+    }
 }

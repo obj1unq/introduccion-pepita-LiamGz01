@@ -1,0 +1,31 @@
+import pepita.*
+
+describe "name" {
+    test "Comportamiento básico de Pepita" {
+        pepita.volar(200)
+        assert.equals(pepita.energia(),70)
+        assert.notThat(pepita.cansada())
+        pepita.volar(350)
+        assert.equals(pepita.energia(),25)
+        assert.that(pepita.cansada())
+        pepita.descansar()
+        assert.notThat(pepita.cansada())
+    }
+
+    test "Alimentar a pepita" {
+        pepita.volar(900)
+        assert.that(pepita.cansada())
+        pepita.comer(alpiste)
+        assert.that(pepita.cansada())
+        pepita.comer(alpiste)
+        assert.notThat(pepita.cansada())
+    }
+
+    test "Pepón" {
+        assert.that(pepon.cansada())
+        pepon.comer(alpiste)
+        assert.equals(40, pepon.energia())
+        pepon.volar(3)
+        assert.equals(4, pepon.energia())
+    }
+}
